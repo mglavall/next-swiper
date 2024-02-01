@@ -6,11 +6,16 @@ const Test = ()=>{
     const swiper = useSwiper();
 
     useEffect(() => {
+        //This never gets called on React 18
         swiper.on('slideChange', swipe => {
-          console.log('eventWorks!')
+          console.log('slideChange event Works!')
         });
+        swiper.on('click', swipe => {
+            console.log('click event Works!')
+          });
         return () => {
           swiper.off('slideChange');
+          swiper.off('click');
         };
       }, []);
 
