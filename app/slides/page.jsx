@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Test from './test'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
@@ -24,6 +25,7 @@ export default function Page() {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
+              <Test></Test>
               <div className='flex h-full w-full items-center justify-center'>
                 <Image
                   src={image.src}
